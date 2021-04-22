@@ -1,4 +1,5 @@
 ﻿using senai.inlock.webApi.Domains;
+using senai.inlock.webApi.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace senai.inlock.webApi.Repositories
 {
-    public class JogoRepository
+    public class JogoRepository : IJogoRepository
     {
         private string stringConexao = "Data Source=LAPTOP-RHR31CVJ; initial catalog=inlock_games_manha; integrated security=true";
 

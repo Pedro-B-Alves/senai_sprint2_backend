@@ -14,7 +14,7 @@ namespace senai.inlock.webApi.Domains
         public string email { get; set; }
 
         [Required(ErrorMessage = "Informe a senha")]
-        [StringLength(20, MinimumLength = 5, ErrorMessage = "O campo de senha precisa dde no maximo 20 caracteres!")]
+        //[StringLength(20, MinimumLength = 5, ErrorMessage = "O campo de senha precisa dde no maximo 20 caracteres!")]
         public string senha { get; set; }
         public int idTipoUsuario { get; set; }
 

@@ -24,7 +24,7 @@ namespace senai.inlock.webApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Define o comando a ser executado no banco de dados
-                string querySelect = "SELECT * FROM usuarios WHERE email = @email AND senha = @senha";
+                string querySelect = "SELECT idUsuario, email, senha, titulo FROM usuarios INNER JOIN tiposUsuarios ON usuarios.idTipoUsuario = tiposUsuarios.idTipoUsuario; ";
 
                 // Define o comando cmd passando a query e a conexão
                 using (SqlCommand cmd = new SqlCommand(querySelect, con))
