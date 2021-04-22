@@ -52,7 +52,7 @@ namespace senai.inlock.webApi.Controllers
                 // Formato da Claim = TipoDaClaim, ValorDaClaim
                 new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.email),
                 new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.idUsuario.ToString()),
-                new Claim(ClaimTypes.Role, usuarioBuscado.idTipoUsuario.ToString()),
+                new Claim(ClaimTypes.Role, usuarioBuscado.titulo.ToString()),
             };
 
             // Define a chave de acesso ao token

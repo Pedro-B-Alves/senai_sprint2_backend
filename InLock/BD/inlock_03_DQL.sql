@@ -33,3 +33,8 @@ GO
 SELECT * FROM usuarios
 WHERE email = 'admin@admin.com' AND senha = 'admin';
 GO
+
+SELECT idUsuario, email, senha, titulo FROM usuarios
+INNER JOIN tiposUsuarios
+ON usuarios.idTipoUsuario = tiposUsuarios.idTipoUsuario;
+GO

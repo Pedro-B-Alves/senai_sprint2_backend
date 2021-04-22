@@ -53,6 +53,7 @@ namespace senai.inlock.webApi.Controllers
         /// <param name="id">id do jogo que será buscado</param>
         /// <returns>Um jogo buscado ou NotFound caso nenhum jogo seja encontrado</returns>
         /// http://localhost:5000/api/jogos/1
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -77,7 +78,7 @@ namespace senai.inlock.webApi.Controllers
         /// <returns>Um status code 201 - Created</returns>
         /// http://localhost:5000/api/jogos
         /// [Authorize(Roles = "administrador"] => verifica se o usuário está logado e se ele possui a permissão (se é administrador)
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post(JogoDomain novoJogo)
         {
