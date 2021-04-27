@@ -22,7 +22,7 @@ namespace senai.hroads.webApi.Controllers
         private ITipoDeHabilidadeRepository _tipoHabRepository { get; set; }
 
         /// <summary>
-        /// Instancia o objeto _tipoHabRepository para que haja a referência nos métodos implementas no repositório TipoDeHabilidadeRepository
+        /// Instancia o objeto _tipoHabRepository para que haja a referência nos métodos implementados no repositório TipoDeHabilidadeRepository
         /// </summary>
         public TipoDeHabilidadeController()
         {
@@ -65,6 +65,37 @@ namespace senai.hroads.webApi.Controllers
 
             // Retorna um status code
             return StatusCode(201);
+        }
+
+        /// <summary>
+        /// Atualiza um tipo de habilidade existente
+        /// </summary>
+        /// <param name="id">ID do tipo de habilidade que será atualizado</param>
+        /// <param name="tipoHabAtualizada">Objeto tipoHabAtualizada com as novas informações</param>
+        /// <returns>Um status code 204 - No Content</returns>
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, TipoDeHabilidade tipoHabAtualizada)
+        {
+            // Faz a chamada para o método
+            _tipoHabRepository.Atualizar(id, tipoHabAtualizada);
+
+            // Retorna um status code
+            return StatusCode(204);
+        }
+
+        /// <summary>
+        /// Deleta um tipo de habilidade existente
+        /// </summary>
+        /// <param name="id">ID do tipo de habilidade que será deletado</param>
+        /// <returns>Um status code 204 - No Content</returns>
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            // Faz a chamada para o método
+            _tipoHabRepository.Deletar(id);
+
+            // Retorna um status code
+            return StatusCode(204);
         }
     }
 }
