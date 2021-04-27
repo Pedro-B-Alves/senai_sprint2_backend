@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,40 @@ namespace senai.hroads.webApi
                     // Ignora valores nulos ao fazer junções nas consultas
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 });
+
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                })
+                
+                .AddJwtBearer("JwtBearer", options =>
+                 {
+                     options.TokenValidationParameters = new TokenValidationParameters
+                     {
+                         //Quem emitiu
+                         ValidateIssuer = true,
+
+                         //Quem recebeu
+                         ValidateAudience = true,
+
+                         //Tempo de expiracao sera validado
+                         ValidateLifetime = true,
+
+                         //Forma de criptografia e chave de autenticacao
+                         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Usuario-Login-Autenticacao")),
+
+                         //Valida o tempo de expiracao do token
+                         ClockSkew = TimeSpan.FromMinutes(30),
+
+                         //Nome de quem emitiu
+                         ValidIssuer = "hroads.webApi",
+
+                         //Nome de quem recebeu
+                         ValidAudience = "hroads.webApi"
+                     };
+                 });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +73,9 @@ namespace senai.hroads.webApi
             }
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

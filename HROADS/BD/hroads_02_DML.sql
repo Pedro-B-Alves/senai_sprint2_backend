@@ -38,5 +38,10 @@ VALUES ('Administrador'),('Usuário');
 GO
 
 INSERT INTO Usuario (email, senha, idTipoUsuario)
-VALUES ('admin@admin.com','admin','1'),('usuario@usuario.com','usuario','2');
+VALUES ('admin@admin.com','admin',1),('usuario@usuario.com','usuario',2);
+GO
+
+UPDATE TipoUsuario
+SET tipo = 'Jogador'
+WHERE idTipoUsuario = 2;
 GO
