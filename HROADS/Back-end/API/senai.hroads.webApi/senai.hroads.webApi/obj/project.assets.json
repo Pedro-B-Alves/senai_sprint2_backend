@@ -7539,11 +7539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\HROADS\\API\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
+      "projectUniqueName": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\HROADS\\Back-end\\API\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
       "projectName": "senai.hroads.webApi",
-      "projectPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\HROADS\\API\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
+      "projectPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\HROADS\\Back-end\\API\\senai.hroads.webApi\\senai.hroads.webApi\\senai.hroads.webApi.csproj",
       "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\HROADS\\API\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
+      "outputPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\HROADS\\Back-end\\API\\senai.hroads.webApi\\senai.hroads.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",

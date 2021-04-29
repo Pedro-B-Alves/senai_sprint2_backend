@@ -23,12 +23,21 @@ namespace senai.hroads.webApi.Controllers
             _classeRepository = new ClasseRepository();
         }
 
+        /// <summary>
+        /// Lista todas as Classes
+        /// </summary>
+        /// <returns>Status Code OK e uma lista de Classes</returns>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_classeRepository.Listar());
         }
 
+        /// <summary>
+        /// Cadastra uma nova Classe
+        /// </summary>
+        /// <param name="novaClasse">Objeto novaClasse que será cadastrado</param>
+        /// <returns>Status Code 201</returns>
         [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post(Classe novaClasse)
@@ -40,6 +49,11 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// Busca uma classe pelo Id passado na URL
+        /// </summary>
+        /// <param name="id">Id da classe que será buscada</param>
+        /// <returns>Classe buscada</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -47,6 +61,11 @@ namespace senai.hroads.webApi.Controllers
             return Ok(_classeRepository.BuscarPorId(id));
         }
 
+        /// <summary>
+        /// Deleta uma classe existente
+        /// </summary>
+        /// <param name="id">Id da classe que será deleteada</param>
+        /// <returns>Status Code 201</returns>
         [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
@@ -56,6 +75,12 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// Atualiza uma classe existente
+        /// </summary>
+        /// <param name="id">Id da classe que será atualizada</param>
+        /// <param name="classeAtualizada">Objeto classeAtualizada com novos dados da classe </param>
+        /// <returns>Status Code 204</returns>
         [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, Classe classeAtualizada)

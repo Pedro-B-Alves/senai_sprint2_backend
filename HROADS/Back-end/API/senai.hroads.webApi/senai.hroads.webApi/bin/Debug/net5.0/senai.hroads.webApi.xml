@@ -4,6 +4,41 @@
         <name>senai.hroads.webApi</name>
     </assembly>
     <members>
+        <member name="M:senai.hroads.webApi.Controllers.ClassesController.Get">
+            <summary>
+            Lista todas as Classes
+            </summary>
+            <returns>Status Code OK e uma lista de Classes</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.ClassesController.Post(senai.hroads.webApi.Domains.Classe)">
+            <summary>
+            Cadastra uma nova Classe
+            </summary>
+            <param name="novaClasse">Objeto novaClasse que será cadastrado</param>
+            <returns>Status Code 201</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.ClassesController.GetById(System.Int32)">
+            <summary>
+            Busca uma classe pelo Id passado na URL
+            </summary>
+            <param name="id">Id da classe que será buscada</param>
+            <returns>Classe buscada</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.ClassesController.Delete(System.Int32)">
+            <summary>
+            Deleta uma classe existente
+            </summary>
+            <param name="id">Id da classe que será deleteada</param>
+            <returns>Status Code 201</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.ClassesController.Put(System.Int32,senai.hroads.webApi.Domains.Classe)">
+            <summary>
+            Atualiza uma classe existente
+            </summary>
+            <param name="id">Id da classe que será atualizada</param>
+            <param name="classeAtualizada">Objeto classeAtualizada com novos dados da classe </param>
+            <returns>Status Code 204</returns>
+        </member>
         <member name="P:senai.hroads.webApi.Controllers.HabilidadesController._habRepository">
             <summary>
             Objeto _habRepository que irá receber todos os métodos definidos na interface IHabilidadeRepository
@@ -48,6 +83,13 @@
             </summary>
             <param name="id">ID da habilidade que será deletada</param>
             <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.LoginController.Login(senai.hroads.webApi.Domains.Usuario)">
+            <summary>
+            Realiza o Login do usuário
+            </summary>
+            <param name="usuarioLogin">Objeto usuarioLogin que contém email e senha</param>
+            <returns>Status Code Ok </returns>
         </member>
         <member name="P:senai.hroads.webApi.Controllers.PersonagensController._persoRepository">
             <summary>
@@ -138,6 +180,76 @@
             </summary>
             <param name="id">ID do tipo de habilidade que será deletado</param>
             <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.TiposUsuarioController.Get">
+            <summary>
+            Lista todos os tipos de usuários
+            </summary>
+            <returns>Status Code OK com Lista dos Tipos de Usuários</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.TiposUsuarioController.Post(senai.hroads.webApi.Domains.TipoUsuario)">
+            <summary>
+            Cadastra novo Tipo de Usuário
+            </summary>
+            <param name="novoTipoUsuario">Objeto novoTipoUsuario com informações do novo Tipo de Usuário</param>
+            <returns>Status Code 201</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.TiposUsuarioController.GetById(System.Int32)">
+            <summary>
+            Busca um Tipo de Usuário pelo Id passado na URL
+            </summary>
+            <param name="id">Id do Tipo Usuário que será buscada</param>
+            <returns>Tipo Usuario Buscado</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.TiposUsuarioController.Delete(System.Int32)">
+            <summary>
+            Deleta um Tipo de Usuário existente
+            </summary>
+            <param name="id">Id do Tipo de Usuário que será deleteado</param>
+            <returns>Status Code 201</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.TiposUsuarioController.Put(System.Int32,senai.hroads.webApi.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um Tipo de Usuário existente
+            </summary>
+            <param name="id">Id do Tipo de Usuário que será atualizado</param>
+            <param name="tipoUsuarioAtualizado">Objeto tipoUsuarioAtualizado com novos dados </param>
+            <returns>Status Code 204</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.UsuariosController.Get">
+            <summary>
+            Lista todos os usuários cadastrados
+            </summary>
+            <returns>Status Code Ok e Lista dos usuários cadastrados</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.UsuariosController.GetById(System.Int32)">
+            <summary>
+            Busca um usuário pelo Id passado na URL
+            </summary>
+            <param name="id">Id do usuário que será buscado</param>
+            <returns>Usuario Buscado</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.UsuariosController.Post(senai.hroads.webApi.Domains.Usuario)">
+            <summary>
+            Cadastra um novo Usuário
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario que contém as informações do usuário que será cadastrado</param>
+            <returns>Status Code 201</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.UsuariosController.Put(System.Int32,senai.hroads.webApi.Domains.Usuario)">
+            <summary>
+            Atualiza um Usuario Existente
+            </summary>
+            <param name="id">Id do Usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto usuarioAtualizado com as novas informações do Usuário</param>
+            <returns>Status Code 204</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuário existente 
+            </summary>
+            <param name="id">Id do Usuário que será deletado</param>
+            <returns>Status Code 204</returns>
         </member>
         <member name="T:senai.hroads.webApi.Interfaces.IHabilidadeRepository">
             <summary>

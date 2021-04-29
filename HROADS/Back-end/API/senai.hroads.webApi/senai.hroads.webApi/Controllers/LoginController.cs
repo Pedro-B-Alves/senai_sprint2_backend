@@ -24,6 +24,11 @@ namespace senai.hroads.webApi.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Realiza o Login do usuário
+        /// </summary>
+        /// <param name="usuarioLogin">Objeto usuarioLogin que contém email e senha</param>
+        /// <returns>Status Code Ok </returns>
         [HttpPost]
         public IActionResult Login(Usuario usuarioLogin)
         {

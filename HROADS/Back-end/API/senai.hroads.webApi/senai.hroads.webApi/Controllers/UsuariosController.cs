@@ -22,18 +22,32 @@ namespace senai.hroads.webApi.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Lista todos os usuários cadastrados
+        /// </summary>
+        /// <returns>Status Code Ok e Lista dos usuários cadastrados</returns>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_usuarioRepository.Listar());
         }
 
+        /// <summary>
+        /// Busca um usuário pelo Id passado na URL
+        /// </summary>
+        /// <param name="id">Id do usuário que será buscado</param>
+        /// <returns>Usuario Buscado</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             return Ok(_usuarioRepository.BuscarPorId(id));
         }
 
+        /// <summary>
+        /// Cadastra um novo Usuário
+        /// </summary>
+        /// <param name="novoUsuario">Objeto novoUsuario que contém as informações do usuário que será cadastrado</param>
+        /// <returns>Status Code 201</returns>
         [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post(Usuario novoUsuario)
@@ -43,6 +57,12 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// Atualiza um Usuario Existente
+        /// </summary>
+        /// <param name="id">Id do Usuário que será atualizado</param>
+        /// <param name="usuarioAtualizado">Objeto usuarioAtualizado com as novas informações do Usuário</param>
+        /// <returns>Status Code 204</returns>
         [Authorize(Roles = "Administrador")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, Usuario usuarioAtualizado)
@@ -52,6 +72,11 @@ namespace senai.hroads.webApi.Controllers
             return StatusCode(204);
         }
 
+        /// <summary>
+        /// Deleta um usuário existente 
+        /// </summary>
+        /// <param name="id">Id do Usuário que será deletado</param>
+        /// <returns>Status Code 204</returns>
         [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
