@@ -31,6 +31,11 @@ namespace senai.spMedicalGroup_webApi.Repositories
             return ctx.Consulta.FirstOrDefault(tu => tu.IdConsulta == id);
         }
 
+        public Consultum BuscarPorIdUsuario(int id)
+        {
+            return ctx.Consulta.FirstOrDefault(tu => tu.IdPaciente == id || tu.IdMedico == id);
+        }
+
         public void Cadastrar(Consultum novaConsultum)
         {
             ctx.Consulta.Add(novaConsultum);

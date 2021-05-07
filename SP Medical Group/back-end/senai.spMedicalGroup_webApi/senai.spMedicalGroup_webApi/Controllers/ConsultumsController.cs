@@ -31,9 +31,9 @@ namespace senai.spMedicalGroup_webApi.Controllers
         }
 
         /// <summary> 
-        /// Lista todos os tipos de usuários 
+        /// Lista todas as consultas 
         /// </summary> 
-        /// <returns>Uma lista de tipos de usuários e um status code 200 - Ok</returns> 
+        /// <returns>Uma lista de consultas  e um status code 200 - Ok</returns> 
         [HttpGet]
         public IActionResult Get()
         {
@@ -49,10 +49,10 @@ namespace senai.spMedicalGroup_webApi.Controllers
         }
 
         /// <summary> 
-        /// Busca um tipo de usuário através do ID 
+        /// Busca uma consulta através do ID 
         /// </summary> 
-        /// <param name="id">ID do tipo de usuário que será buscado</param> 
-        /// <returns>Um tipo de usuário buscado e um status code 200 - Ok</returns> 
+        /// <param name="id">ID da consulta que será buscada</param> 
+        /// <returns>Uma consulta buscada e um status code 200 - Ok</returns> 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -68,7 +68,26 @@ namespace senai.spMedicalGroup_webApi.Controllers
         }
 
         /// <summary> 
-        /// Cadastra um novo tipo de usuário 
+        /// Busca as consulta através do ID 
+        /// </summary> 
+        /// <param name="id">ID da consulta que será buscada</param> 
+        /// <returns>As consultas buscadas e um status code 200 - Ok</returns> 
+        [HttpGet("/Listar{id}")]
+        public IActionResult GetByIdUser(int id)
+        {
+            try
+            {
+                // Retora a resposta da requisição fazendo a chamada para o método 
+                return Ok(_ConsultumRepository.BuscarPorIdUsuario(id));
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        /// <summary> 
+        /// Cadastra uma nova consulta 
         /// </summary> 
         /// <param name="novoConsultum">Objeto novoConsultum que será cadastrado</param> 
         /// <returns>Um status code 201 - Created</returns> 
@@ -90,9 +109,9 @@ namespace senai.spMedicalGroup_webApi.Controllers
         }
 
         /// <summary> 
-        /// Atualiza um tipo de usuário existente 
+        /// Atualiza uma consulta existente 
         /// </summary> 
-        /// <param name="id">ID do tipo de usuário que será atualizado</param> 
+        /// <param name="id">ID do consulta que será atualizada</param> 
         /// <param name="ConsultumAtualizado">Objeto com as novas informações</param> 
         /// <returns>Um status code 204 - No Content</returns> 
         [HttpPut("{id}")]
@@ -113,9 +132,9 @@ namespace senai.spMedicalGroup_webApi.Controllers
         }
 
         /// <summary> 
-        /// Deleta um tipo de usuário existente 
+        /// Deleta uma consulta existente 
         /// </summary> 
-        /// <param name="id">ID do tipo de usuário que será deletado</param> 
+        /// <param name="id">ID da consulta que será deletada</param> 
         /// <returns>Um status code 204 - No Content</returns> 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

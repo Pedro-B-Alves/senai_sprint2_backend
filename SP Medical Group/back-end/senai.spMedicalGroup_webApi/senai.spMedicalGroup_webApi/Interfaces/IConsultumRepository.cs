@@ -12,6 +12,8 @@ namespace senai.spMedicalGroup_webApi.Interfaces
 
         Consultum BuscarPorId(int id);
 
+        Consultum BuscarPorIdUsuario(int id);
+
         void Cadastrar(Consultum novoConsultum);
 
         void Atualizar(int id, Consultum ConsultumAtualizado);
