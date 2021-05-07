@@ -72,7 +72,7 @@ namespace senai.spMedicalGroup_webApi.Controllers
         /// </summary> 
         /// <param name="id">ID da consulta que será buscada</param> 
         /// <returns>As consultas buscadas e um status code 200 - Ok</returns> 
-        [HttpGet("/Listar{id}")]
+        [HttpGet("/Listar/{id}")]
         public IActionResult GetByIdUser(int id)
         {
             try
