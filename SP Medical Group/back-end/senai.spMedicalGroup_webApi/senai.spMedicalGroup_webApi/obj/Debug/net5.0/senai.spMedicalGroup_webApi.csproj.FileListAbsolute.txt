@@ -65,3 +65,5 @@ C:\Users\pedro\OneDrive\Área de Trabalho\Banco de Dados\senai_sprint2_backend\S
 C:\Users\pedro\OneDrive\Área de Trabalho\Banco de Dados\senai_sprint2_backend\SP Medical Group\back-end\senai.spMedicalGroup_webApi\senai.spMedicalGroup_webApi\obj\Debug\net5.0\ref\senai.spMedicalGroup_webApi.dll
 C:\Users\pedro\OneDrive\Área de Trabalho\Banco de Dados\senai_sprint2_backend\SP Medical Group\back-end\senai.spMedicalGroup_webApi\senai.spMedicalGroup_webApi\obj\Debug\net5.0\senai.spMedicalGroup_webApi.pdb
 C:\Users\pedro\OneDrive\Área de Trabalho\Banco de Dados\senai_sprint2_backend\SP Medical Group\back-end\senai.spMedicalGroup_webApi\senai.spMedicalGroup_webApi\obj\Debug\net5.0\senai.spMedicalGroup_webApi.genruntimeconfig.cache
+C:\Users\pedro\OneDrive\Área de Trabalho\Banco de Dados\senai_sprint2_backend\SP Medical Group\back-end\senai.spMedicalGroup_webApi\senai.spMedicalGroup_webApi\bin\Debug\net5.0\senai.spMedicalGroup_webApi.xml
+C:\Users\pedro\OneDrive\Área de Trabalho\Banco de Dados\senai_sprint2_backend\SP Medical Group\back-end\senai.spMedicalGroup_webApi\senai.spMedicalGroup_webApi\obj\Debug\net5.0\senai.spMedicalGroup_webApi.xml
